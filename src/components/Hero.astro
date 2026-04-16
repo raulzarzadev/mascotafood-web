@@ -5,10 +5,22 @@ import { SITE } from '../consts';
 <section id="inicio" class="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-accent-500/5">
   <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
     <div class="relative z-10">
-      <span class="inline-flex items-center gap-2 rounded-full bg-accent-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-700">
-        <span class="h-2 w-2 rounded-full bg-accent-500" aria-hidden="true"></span>
-        Servicio a domicilio GRATIS
-      </span>
+      <div class="flex flex-wrap items-center gap-2">
+        <a
+          href="#ubicacion"
+          class="inline-flex items-center gap-2 rounded-full bg-accent-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-700 transition hover:bg-accent-500/20"
+        >
+          <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Villas de la Hacienda · Atizapán
+        </a>
+        <span class="inline-flex items-center gap-2 rounded-full bg-brand-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-700">
+          <span class="h-2 w-2 rounded-full bg-brand-600" aria-hidden="true"></span>
+          Envío a domicilio GRATIS
+        </span>
+      </div>
       <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-stone-900 sm:text-5xl lg:text-6xl">
         {SITE.tagline}
         <span class="mt-2 block bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent">
@@ -16,7 +28,7 @@ import { SITE } from '../consts';
         </span>
       </h1>
       <p class="mt-6 max-w-xl text-lg text-stone-700">
-        En <strong>{SITE.name}</strong> cuidamos a tu mascota como de la familia. Alimento premium para perros y gatos, juguetes, camas, bandanas y accesorios seleccionados, con entrega a domicilio en el Estado de México.
+        <strong>Mascota Food Villas</strong> es tu tienda de mascotas en <strong>Villas de la Hacienda, Atizapán de Zaragoza</strong>. Alimento premium para perros y gatos, juguetes, camas, bandanas y accesorios seleccionados, con entrega a domicilio gratis en toda la zona.
       </p>
 
       <div class="mt-8 flex flex-wrap gap-3">

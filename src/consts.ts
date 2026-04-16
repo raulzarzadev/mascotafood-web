@@ -1,9 +1,12 @@
 export const SITE = {
   name: 'Mascota Food',
+  alternateName: 'Mascota Food Villas',
+  localBrand: 'Mascota Food Villas',
   shortName: 'Mascota Food',
   tagline: 'Lo mejor para tu mejor amigo',
+  localTagline: 'Tu tienda de mascotas en Villas de la Hacienda, Atizapán',
   description:
-    'Tienda especializada en alimento premium para perros y gatos, accesorios, juguetes y artículos para mascotas en el Estado de México. Servicio a domicilio gratis.',
+    'Mascota Food Villas — tienda de alimento premium para perros y gatos en Villas de la Hacienda, Atizapán de Zaragoza. Accesorios, juguetes y servicio a domicilio gratis en el Estado de México.',
   url: 'https://mascotafood.com',
   locale: 'es_MX',
   phone: '+525554941191',
@@ -12,11 +15,12 @@ export const SITE = {
   email: 'contacto@mascotafood.com',
   address: {
     streetAddress: 'Mz. 1 Lt. 3, Hacienda de la Luz',
+    neighborhood: 'Villas de la Hacienda',
     locality: 'Atizapán de Zaragoza',
     region: 'Estado de México',
     postalCode: '52929',
     country: 'MX',
-    full: 'Mz. 1 Lt. 3, Hacienda de la Luz, Adolfo López Mateos, 52929 Atizapán de Zaragoza, Estado de México',
+    full: 'Mz. 1 Lt. 3, Hacienda de la Luz, Villas de la Hacienda, 52929 Atizapán de Zaragoza, Estado de México',
   },
   geo: {
     latitude: 19.601954,
@@ -168,5 +172,13 @@ export const FAQS = [
   {
     q: '¿Tienen productos para gatos?',
     a: '¡Por supuesto! Contamos con alimento premium, arenas, juguetes, rascadores y accesorios especialmente pensados para gatos.',
+  },
+  {
+    q: '¿Dónde están ubicados?',
+    a: 'Nos encuentras en Mz. 1 Lt. 3, Hacienda de la Luz, dentro de Villas de la Hacienda, en Atizapán de Zaragoza, Estado de México (CP 52929). En la sección "Visítanos" puedes abrir la ruta directa en Google Maps o Waze.',
+  },
+  {
+    q: '¿A qué zonas llegan con el servicio a domicilio?',
+    a: 'Nuestra zona principal es Villas de la Hacienda y las colonias cercanas de Atizapán de Zaragoza; también cubrimos Cuautitlán Izcalli, Tlalnepantla y otros municipios vecinos del Estado de México. Pregúntanos por WhatsApp si tu colonia aplica.',
   },
 ] as const;

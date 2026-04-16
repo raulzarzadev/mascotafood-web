@@ -11,7 +11,7 @@ interface Props {
 }
 
 const {
-  title = `${SITE.name} — ${SITE.tagline}`,
+  title = `${SITE.localBrand} — ${SITE.localTagline}`,
   description = SITE.description,
   image = '/og-image.jpg',
   canonical,
@@ -28,6 +28,7 @@ const graphJsonLd = {
       '@type': 'Organization',
       '@id': `${SITE.url}/#organization`,
       name: SITE.name,
+      alternateName: SITE.alternateName,
       url: SITE.url,
       logo: {
         '@type': 'ImageObject',
@@ -49,6 +50,7 @@ const graphJsonLd = {
       '@type': 'PetStore',
       '@id': `${SITE.url}/#localbusiness`,
       name: SITE.name,
+      alternateName: SITE.alternateName,
       description: SITE.description,
       url: SITE.url,
       image: ogImage,
@@ -59,7 +61,7 @@ const graphJsonLd = {
       paymentAccepted: 'Cash, Credit Card, Debit Card, Bank Transfer',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: SITE.address.streetAddress,
+        streetAddress: `${SITE.address.streetAddress}, ${SITE.address.neighborhood}`,
         addressLocality: SITE.address.locality,
         addressRegion: SITE.address.region,
         postalCode: SITE.address.postalCode,
@@ -72,6 +74,7 @@ const graphJsonLd = {
       },
       hasMap: SITE.maps.url,
       areaServed: [
+        { '@type': 'Place', name: 'Villas de la Hacienda' },
         { '@type': 'City', name: 'Atizapán de Zaragoza' },
         { '@type': 'City', name: 'Cuautitlán Izcalli' },
         { '@type': 'City', name: 'Tlalnepantla' },
