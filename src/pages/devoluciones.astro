@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../consts';
+
+const updated = '2026-04-16';
+---
+
+<Layout
+  title={`Política de Cambios y Devoluciones — ${SITE.name}`}
+  description={`Conoce las condiciones de cambio y devolución en ${SITE.name}. Tu satisfacción y la salud de tu mascota son nuestra prioridad.`}
+>
+  <Header />
+  <main id="main" class="bg-white">
+    <article class="prose mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+      <header class="not-prose mb-8">
+        <a href="/" class="text-sm font-medium text-brand-700 hover:text-brand-800">&larr; Volver al inicio</a>
+        <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">
+          Cambios y devoluciones
+        </h1>
+        <p class="mt-2 text-sm text-stone-500">Última actualización: {updated}</p>
+      </header>
+
+      <div class="space-y-5 text-stone-700">
+        <p>
+          En <strong>{SITE.name}</strong> nos importa la salud y el gusto de tu mascota. Si tu compra
+          no cumple con lo que esperabas, aplican las siguientes condiciones de cambio o devolución:
+        </p>
+
+        <h2 class="text-xl font-bold text-stone-900">Plazo</h2>
+        <p>
+          Cuentas con <strong>7 días naturales</strong> a partir de la recepción del producto para
+          solicitar un cambio o devolución.
+        </p>
+
+        <h2 class="text-xl font-bold text-stone-900">Condiciones</h2>
+        <ul class="list-disc pl-6">
+          <li>Producto en su empaque original, cerrado y sin daños.</li>
+          <li>Comprobante de compra (ticket, nota, transferencia o confirmación WhatsApp).</li>
+          <li>Alimentos abiertos: solo se aceptan en caso de defecto de fábrica o reacción alérgica comprobada por veterinario.</li>
+          <li>Productos con empaque dañado en la entrega deben reportarse el mismo día.</li>
+        </ul>
+
+        <h2 class="text-xl font-bold text-stone-900">Excepciones</h2>
+        <p>No aceptamos devolución en los siguientes casos:</p>
+        <ul class="list-disc pl-6">
+          <li>Alimento a granel (por higiene y seguridad).</li>
+          <li>Medicamentos, suplementos y productos refrigerados.</li>
+          <li>Productos personalizados (bandanas con nombre, grabados).</li>
+        </ul>
+
+        <h2 class="text-xl font-bold text-stone-900">¿Cómo solicitar un cambio o devolución?</h2>
+        <ol class="list-decimal pl-6">
+          <li>Escríbenos por WhatsApp al <strong>{SITE.phoneDisplay}</strong> con tu nombre, fecha de compra y motivo.</li>
+          <li>Acordamos recolección sin costo dentro de nuestra zona de entrega.</li>
+          <li>Una vez revisado el producto, procesamos el cambio o reembolso en un plazo máximo de 5 días hábiles.</li>
+        </ol>
+
+        <h2 class="text-xl font-bold text-stone-900">Reembolsos</h2>
+        <p>
+          Se realizan por el mismo medio de pago original. Las transferencias bancarias pueden tardar
+          de 1 a 3 días hábiles adicionales según tu banco.
+        </p>
+
+        <h2 class="text-xl font-bold text-stone-900">Garantía de satisfacción en alimento</h2>
+        <p>
+          Si tu mascota no acepta un alimento nuevo dentro de los primeros 7 días,
+          <strong> te ayudamos a cambiarlo por otra marca o presentación</strong> siempre que el
+          empaque conserve más del 80% del producto y lo reportes por WhatsApp.
+        </p>
+
+        <p class="pt-4">
+          ¿Tienes dudas? Contáctanos en
+          <a href={`mailto:${SITE.email}`} class="text-brand-700 underline">{SITE.email}</a>
+          o al <a href={`https://wa.me/${SITE.whatsapp}`} class="text-brand-700 underline">WhatsApp {SITE.phoneDisplay}</a>.
+        </p>
+
+        <p class="pt-4 text-sm text-stone-500">
+          <strong>Nota:</strong> Política inicial. Se recomienda validación con abogado y ajuste de
+          plazos/excepciones conforme a la operación real.
+        </p>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>

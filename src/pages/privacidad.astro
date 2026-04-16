@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../consts';
+
+const updated = '2026-04-16';
+---
+
+<Layout
+  title={`Aviso de Privacidad — ${SITE.name}`}
+  description={`Aviso de Privacidad de ${SITE.name} conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).`}
+>
+  <Header />
+  <main id="main" class="bg-white">
+    <article class="prose mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+      <header class="not-prose mb-8">
+        <a href="/" class="text-sm font-medium text-brand-700 hover:text-brand-800">&larr; Volver al inicio</a>
+        <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">
+          Aviso de Privacidad
+        </h1>
+        <p class="mt-2 text-sm text-stone-500">Última actualización: {updated}</p>
+      </header>
+
+      <div class="space-y-5 text-stone-700">
+        <p>
+          En cumplimiento con lo dispuesto por la Ley Federal de Protección de Datos Personales en
+          Posesión de los Particulares (LFPDPPP) y su Reglamento, <strong>{SITE.name}</strong>,
+          con domicilio en <strong>{SITE.address.locality}, {SITE.address.region}, México</strong>,
+          pone a su disposición el presente Aviso de Privacidad.
+        </p>
+
+        <h2 class="text-xl font-bold text-stone-900">1. Responsable del tratamiento</h2>
+        <p>
+          {SITE.name} es responsable de recabar sus datos personales, del uso que se les dé y de su
+          protección. Para cualquier duda relacionada con este Aviso puede contactarnos en
+          <a href={`mailto:${SITE.email}`} class="text-brand-700 underline">{SITE.email}</a>
+          o al teléfono {SITE.phoneDisplay}.
+        </p>
+
+        <h2 class="text-xl font-bold text-stone-900">2. Datos personales que recabamos</h2>
+        <p>Podremos solicitar y tratar los siguientes datos:</p>
+        <ul class="list-disc pl-6">
+          <li>Nombre completo</li>
+          <li>Domicilio de entrega y código postal</li>
+          <li>Teléfono y correo electrónico</li>
+          <li>Información de tu mascota (especie, raza, edad, preferencias) cuando la proporciones voluntariamente para recomendación de producto</li>
+          <li>Historial de pedidos y preferencias de compra</li>
+        </ul>
+
+        <h2 class="text-xl font-bold text-stone-900">3. Finalidades del tratamiento</h2>
+        <p><strong>Finalidades primarias</strong> (necesarias para la relación comercial):</p>
+        <ul class="list-disc pl-6">
+          <li>Procesar pedidos y entregas a domicilio</li>
+          <li>Emitir comprobantes y, en su caso, facturación</li>
+          <li>Brindar asesoría sobre productos adecuados para tu mascota</li>
+          <li>Atender dudas, reclamos y devoluciones</li>
+        </ul>
+        <p><strong>Finalidades secundarias</strong> (puedes oponerte sin afectar la primaria):</p>
+        <ul class="list-disc pl-6">
+          <li>Envío de promociones, recordatorios y novedades</li>
+          <li>Encuestas de satisfacción</li>
+        </ul>
+
+        <h2 class="text-xl font-bold text-stone-900">4. Transferencias</h2>
+        <p>
+          Sus datos <strong>no serán transferidos a terceros</strong>, salvo a proveedores de
+          servicios necesarios para la entrega (mensajería) o por obligación legal. En ningún caso
+          serán vendidos ni cedidos con fines comerciales.
+        </p>
+
+        <h2 class="text-xl font-bold text-stone-900">5. Derechos ARCO</h2>
+        <p>
+          Usted tiene derecho a <strong>Acceder, Rectificar, Cancelar u Oponerse</strong> al
+          tratamiento de sus datos, así como a revocar el consentimiento otorgado. Para ejercerlos,
+          envíe su solicitud a <a href={`mailto:${SITE.email}`} class="text-brand-700 underline">{SITE.email}</a>
+          indicando: nombre, descripción clara del derecho a ejercer y acreditación de identidad.
+          Responderemos en un plazo máximo de 20 días hábiles.
+        </p>
+
+        <h2 class="text-xl font-bold text-stone-900">6. Uso de cookies y tecnologías similares</h2>
+        <p>
+          Nuestro sitio utiliza cookies estrictamente necesarias para su funcionamiento y, con su
+          consentimiento implícito al continuar navegando, cookies analíticas (Vercel Web Analytics
+          en modo agregado y anónimo). Puede desactivarlas desde la configuración de su navegador.
+        </p>
+
+        <h2 class="text-xl font-bold text-stone-900">7. Cambios al aviso</h2>
+        <p>
+          Nos reservamos el derecho de actualizar este Aviso. La versión vigente siempre estará
+          publicada en <a href="/privacidad" class="text-brand-700 underline">mascotafood.com/privacidad</a>
+          con la fecha de su última actualización.
+        </p>
+
+        <p class="pt-4 text-sm text-stone-500">
+          <strong>Nota:</strong> Este documento es una plantilla inicial. Se recomienda revisión por
+          abogado antes de producción final.
+        </p>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>

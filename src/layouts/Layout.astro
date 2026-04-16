@@ -76,7 +76,6 @@ const websiteJsonLd = {
     <link rel="canonical" href={canonicalURL} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-    <meta name="keywords" content="tienda para mascotas, alimento premium perros, alimento premium gatos, croquetas perros, croquetas gatos, accesorios mascotas, juguetes perros, alimento a granel, tienda mascotas Estado de México, envío a domicilio mascotas" />
     <meta name="author" content={SITE.name} />
     <meta name="theme-color" content="#f97316" />
 
@@ -87,27 +86,27 @@ const websiteJsonLd = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:alt" content={SITE.name} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${SITE.name} — ${SITE.tagline}`} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <link rel="icon" type="image/png" href="/icons/icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/icons/icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link rel="preload" as="image" href="/images/mascota.jpeg" fetchpriority="high" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    />
-    <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
     />
 
     <script

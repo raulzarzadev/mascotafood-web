@@ -10,7 +10,7 @@ const year = new Date().getFullYear();
       <div class="flex items-center gap-3">
         <img
           src="/icons/LogoMascotaFoodSigno.gif"
-          alt=""
+          alt="Mascota Food logotipo"
           width="48"
           height="48"
           class="h-12 w-12 rounded-full bg-white p-1"
@@ -90,9 +90,12 @@ const year = new Date().getFullYear();
   </div>
 
   <div class="border-t border-stone-800">
-    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-stone-500 sm:flex-row sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-xs text-stone-500 sm:flex-row sm:px-6 lg:px-8">
       <p>© {year} {SITE.name}. Todos los derechos reservados.</p>
-      <p>Hecho con <span class="text-brand-400">♥</span> para tu mejor amigo.</p>
+      <nav aria-label="Legal" class="flex flex-wrap items-center gap-4">
+        <a href="/privacidad" class="transition hover:text-brand-400">Aviso de Privacidad</a>
+        <a href="/devoluciones" class="transition hover:text-brand-400">Cambios y devoluciones</a>
+      </nav>
     </div>
   </div>
 </footer>
