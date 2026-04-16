@@ -11,22 +11,88 @@ export const SITE = {
   whatsapp: '525554941191',
   email: 'contacto@mascotafood.com',
   address: {
-    locality: 'Villas del Real',
+    streetAddress: 'Mz. 1 Lt. 3, Hacienda de la Luz',
+    locality: 'Atizapán de Zaragoza',
     region: 'Estado de México',
+    postalCode: '52929',
     country: 'MX',
+    full: 'Mz. 1 Lt. 3, Hacienda de la Luz, Adolfo López Mateos, 52929 Atizapán de Zaragoza, Estado de México',
+  },
+  geo: {
+    latitude: 19.601954,
+    longitude: -99.228176,
+  },
+  maps: {
+    url: 'https://maps.app.goo.gl/EcqN7MKR88JDs7WW7',
+    embed:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3758.5924414856513!2d-99.22817592566852!3d19.60195383525235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21d20333d3459%3A0xad8386b533d886f4!2sMASCOTA-FOOD!5e0!3m2!1ses-419!2smx!4v1776371791559!5m2!1ses-419!2smx',
+    directions: 'https://www.google.com/maps/dir/?api=1&destination=19.601954,-99.228176&destination_place_id=ChIJWTQ9MyAd0oURsgbYM7OWg60',
   },
   social: {
     facebook: 'https://facebook.com/MascotaFoodVillas',
+    instagram: 'https://www.instagram.com/mascotafoodmx/',
     telegram: 'https://telegram.me/macotafood',
-    instagram: 'https://instagram.com/mascotafood',
   },
+} as const;
+
+export const REVIEWS = [
+  {
+    author: 'Jesús Hernández Bravo',
+    rating: 5,
+    date: '2025-04-16',
+    relativeTime: 'Hace un año',
+    text: 'Muy recomendable por atención y variedad de croquetas. No encontraba Nupec cachorros y aquí sí la tuvo. Adicional compré más artículos a buen precio y buena calidad. Sigan así chicos.',
+  },
+  {
+    author: 'Antonieta Verdejo',
+    rating: 5,
+    date: '2025-04-16',
+    relativeTime: 'Hace un año',
+    text: 'Siempre muy atentos. Si no tienen el alimento que precisa tu mascota lo consiguen. Mi lugar favorito para comprar el alimento de mis mascotas.',
+  },
+  {
+    author: 'María De La Paz Velasco Del Valle',
+    rating: 5,
+    date: '2024-04-16',
+    relativeTime: 'Hace 2 años',
+    text: 'Excelente servicio y muy bien surtido con diferentes marcas de croquetas para gatos y perros.',
+  },
+  {
+    author: 'Jacobo',
+    rating: 5,
+    date: '2024-04-16',
+    relativeTime: 'Hace 2 años',
+    text: 'Excelente opción para conseguir alimento Nupec.',
+  },
+  {
+    author: 'Luis Enriquez',
+    rating: 5,
+    date: '2024-04-16',
+    relativeTime: 'Hace 2 años',
+    text: 'Buen lugar, buen trato, el personal sabe del negocio. Lo recomiendo.',
+  },
+  {
+    author: 'Sandra Zarza',
+    rating: 5,
+    date: '2023-04-16',
+    relativeTime: 'Hace 3 años',
+    text: '¡Excelentes precios y variedad de productos! Muy buena experiencia de compra.',
+  },
+] as const;
+
+export const REVIEWS_AGGREGATE = {
+  ratingValue: 4.8,
+  reviewCount: 15,
+  bestRating: 5,
+  worstRating: 1,
 } as const;
 
 export const NAV_LINKS = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Productos', href: '#productos' },
   { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Preguntas', href: '#faq' },
+  { label: 'Opiniones', href: '#opiniones' },
+  { label: 'Ubicación', href: '#ubicacion' },
   { label: 'Contacto', href: '#contacto' },
 ] as const;
 

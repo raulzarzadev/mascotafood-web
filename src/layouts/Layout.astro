@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE } from '../consts';
+import { SITE, REVIEWS, REVIEWS_AGGREGATE, PRODUCTS } from '../consts';
 
 interface Props {
   title?: string;
@@ -21,46 +21,118 @@ const {
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
 const ogImage = new URL(image, Astro.site).toString();
 
-const organizationJsonLd = {
+const graphJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'PetStore',
-  name: SITE.name,
-  description: SITE.description,
-  url: SITE.url,
-  logo: `${SITE.url}/icons/LogoMascotaFood.gif`,
-  image: ogImage,
-  telephone: SITE.phone,
-  email: SITE.email,
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: SITE.address.locality,
-    addressRegion: SITE.address.region,
-    addressCountry: SITE.address.country,
-  },
-  sameAs: [SITE.social.facebook, SITE.social.telegram, SITE.social.instagram],
-  priceRange: '$$',
-  openingHoursSpecification: [
+  '@graph': [
     {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '09:00',
-      closes: '20:00',
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      url: SITE.url,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE.url}/icons/LogoMascotaFood.gif`,
+        width: 512,
+        height: 512,
+      },
+      sameAs: [SITE.social.facebook, SITE.social.instagram],
     },
     {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Sunday',
-      opens: '10:00',
-      closes: '16:00',
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      inLanguage: 'es-MX',
+      publisher: { '@id': `${SITE.url}/#organization` },
+    },
+    {
+      '@type': 'PetStore',
+      '@id': `${SITE.url}/#localbusiness`,
+      name: SITE.name,
+      description: SITE.description,
+      url: SITE.url,
+      image: ogImage,
+      telephone: SITE.phone,
+      email: SITE.email,
+      priceRange: '$$',
+      currenciesAccepted: 'MXN',
+      paymentAccepted: 'Cash, Credit Card, Debit Card, Bank Transfer',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: SITE.address.streetAddress,
+        addressLocality: SITE.address.locality,
+        addressRegion: SITE.address.region,
+        postalCode: SITE.address.postalCode,
+        addressCountry: SITE.address.country,
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: SITE.geo.latitude,
+        longitude: SITE.geo.longitude,
+      },
+      hasMap: SITE.maps.url,
+      areaServed: [
+        { '@type': 'City', name: 'Atizapán de Zaragoza' },
+        { '@type': 'City', name: 'Cuautitlán Izcalli' },
+        { '@type': 'City', name: 'Tlalnepantla' },
+        { '@type': 'AdministrativeArea', name: 'Estado de México' },
+      ],
+      sameAs: [SITE.social.facebook, SITE.social.instagram],
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          opens: '09:00',
+          closes: '20:00',
+        },
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: 'Sunday',
+          opens: '10:00',
+          closes: '16:00',
+        },
+      ],
+      makesOffer: {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Servicio a domicilio gratis',
+          description:
+            'Entrega a domicilio sin costo adicional dentro de la zona de cobertura en el Estado de México.',
+          areaServed: { '@type': 'AdministrativeArea', name: 'Estado de México' },
+        },
+        priceSpecification: { '@type': 'PriceSpecification', price: 0, priceCurrency: 'MXN' },
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Productos para mascotas',
+        itemListElement: PRODUCTS.map((p) => ({
+          '@type': 'OfferCatalog',
+          name: p.title,
+          description: p.description,
+        })),
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: REVIEWS_AGGREGATE.ratingValue,
+        reviewCount: REVIEWS_AGGREGATE.reviewCount,
+        bestRating: REVIEWS_AGGREGATE.bestRating,
+        worstRating: REVIEWS_AGGREGATE.worstRating,
+      },
+      review: REVIEWS.map((r) => ({
+        '@type': 'Review',
+        author: { '@type': 'Person', name: r.author },
+        datePublished: r.date,
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: r.rating,
+          bestRating: 5,
+          worstRating: 1,
+        },
+        reviewBody: r.text,
+      })),
     },
   ],
-};
-
-const websiteJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  url: SITE.url,
-  name: SITE.name,
-  inLanguage: 'es-MX',
 };
 ---
 
@@ -111,11 +183,7 @@ const websiteJsonLd = {
 
     <script
       type="application/ld+json"
-      set:html={JSON.stringify(organizationJsonLd)}
-    />
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify(websiteJsonLd)}
+      set:html={JSON.stringify(graphJsonLd)}
     />
   </head>
   <body>

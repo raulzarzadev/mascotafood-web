@@ -1,15 +1,5 @@
 ---
 import { FAQS } from '../consts';
-
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: FAQS.map((faq) => ({
-    '@type': 'Question',
-    name: faq.q,
-    acceptedAnswer: { '@type': 'Answer', text: faq.a },
-  })),
-};
 ---
 
 <section id="faq" class="bg-stone-50 py-20 sm:py-24">
@@ -37,9 +27,4 @@ const faqJsonLd = {
       ))}
     </div>
   </div>
-
-  <script
-    type="application/ld+json"
-    set:html={JSON.stringify(faqJsonLd)}
-  />
 </section>

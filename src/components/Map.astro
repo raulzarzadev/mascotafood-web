@@ -1,0 +1,111 @@
+---
+import { SITE } from '../consts';
+
+const wazeUrl = `https://waze.com/ul?ll=${SITE.geo.latitude},${SITE.geo.longitude}&navigate=yes`;
+---
+
+<section id="ubicacion" class="bg-white py-20 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <span class="text-sm font-semibold uppercase tracking-wide text-accent-600">Visítanos</span>
+      <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">
+        Nuestra tienda física
+      </h2>
+      <p class="mt-4 text-stone-600">
+        Ven a conocernos, siempre hay algo nuevo y nuestro equipo te asesora de forma personalizada.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-8 lg:grid-cols-5">
+      <div class="lg:col-span-3 order-2 lg:order-1">
+        <div class="overflow-hidden rounded-2xl border border-stone-200 shadow-lg">
+          <iframe
+            src={SITE.maps.embed}
+            title="Mapa de Mascota Food en Atizapán de Zaragoza"
+            width="600"
+            height="450"
+            class="h-80 w-full sm:h-96 lg:h-[460px]"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 order-1 lg:order-2 flex flex-col justify-center">
+        <div class="rounded-2xl bg-stone-50 p-6 ring-1 ring-stone-200">
+          <div class="flex items-start gap-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-bold text-stone-900">Dirección</h3>
+              <address class="mt-1 not-italic text-sm leading-relaxed text-stone-600">
+                {SITE.address.streetAddress}<br />
+                Adolfo López Mateos<br />
+                {SITE.address.postalCode} {SITE.address.locality},<br />
+                {SITE.address.region}
+              </address>
+            </div>
+          </div>
+
+          <div class="mt-5 flex items-start gap-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-bold text-stone-900">Horario</h3>
+              <dl class="mt-1 text-sm text-stone-600">
+                <div class="flex justify-between gap-4">
+                  <dt>Lun&nbsp;–&nbsp;Sáb</dt>
+                  <dd>9:00&nbsp;–&nbsp;20:00</dd>
+                </div>
+                <div class="flex justify-between gap-4">
+                  <dt>Domingo</dt>
+                  <dd>10:00&nbsp;–&nbsp;16:00</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+          <div class="mt-6 flex flex-col gap-2">
+            <a
+              href={SITE.maps.directions}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-5 py-3 font-semibold text-white shadow-md transition hover:bg-brand-700"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+              </svg>
+              Cómo llegar
+            </a>
+            <a
+              href={SITE.maps.url}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-3 font-semibold text-stone-800 transition hover:border-brand-400 hover:text-brand-700"
+            >
+              Ver en Google Maps
+            </a>
+            <a
+              href={wazeUrl}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-3 font-semibold text-stone-800 transition hover:border-brand-400 hover:text-brand-700"
+            >
+              Abrir en Waze
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

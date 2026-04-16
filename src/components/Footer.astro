@@ -36,14 +36,14 @@ const year = new Date().getFullYear();
           </svg>
         </a>
         <a
-          href={SITE.social.telegram}
+          href={SITE.social.instagram}
           target="_blank"
           rel="noopener"
           class="flex h-10 w-10 items-center justify-center rounded-full bg-stone-800 transition hover:bg-brand-600"
-          aria-label="Telegram"
+          aria-label="Instagram"
         >
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="m9.8 15.6-.4 4.2c.6 0 .9-.3 1.2-.6l2.9-2.8 6 4.4c1.1.6 1.9.3 2.2-1L24 2.9c.3-1.6-.6-2.2-1.7-1.8L1.3 9.3C-.3 9.9-.3 10.9 1 11.2l5.4 1.7 12.5-7.9c.6-.3 1.1-.2.7.2z"/>
+            <path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.3.4.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.4.3 1.1.4 2.3 0 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.3a4 4 0 0 1-1 1.5c-.5.5-.9.8-1.5 1-.4.2-1.1.3-2.3.4-1.2 0-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.3-.4a4 4 0 0 1-1.5-1 4 4 0 0 1-1-1.5c-.2-.4-.3-1.1-.4-2.3 0-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.3.2-.6.5-1 1-1.5s.9-.8 1.5-1c.4-.2 1.1-.3 2.3-.4 1.2 0 1.6-.1 4.8-.1zm0 6.3a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.4-.6a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zM12 10a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
           </svg>
         </a>
         <a
@@ -84,7 +84,12 @@ const year = new Date().getFullYear();
             {SITE.email}
           </a>
         </li>
-        <li class="text-stone-400">{SITE.address.locality}, {SITE.address.region}</li>
+        <li>
+          <a href={SITE.maps.url} target="_blank" rel="noopener" class="text-stone-400 transition hover:text-brand-400">
+            {SITE.address.streetAddress},<br />
+            {SITE.address.postalCode} {SITE.address.locality}, {SITE.address.region}
+          </a>
+        </li>
       </ul>
     </div>
   </div>
