@@ -31,6 +31,7 @@ export const SITE = {
     embed:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3758.5924414856513!2d-99.22817592566852!3d19.60195383525235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21d20333d3459%3A0xad8386b533d886f4!2sMASCOTA-FOOD!5e0!3m2!1ses-419!2smx!4v1776371791559!5m2!1ses-419!2smx',
     directions: 'https://www.google.com/maps/dir/?api=1&destination=19.601954,-99.228176&destination_place_id=ChIJWTQ9MyAd0oURsgbYM7OWg60',
+    writeReview: 'https://g.page/r/CfSG2DO1hoOtEBM/review',
   },
   social: {
     facebook: 'https://www.facebook.com/MascotaFoodVillas',
