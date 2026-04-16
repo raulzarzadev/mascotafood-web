@@ -1,2 +1,0 @@
-[    2363ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://mascotafood.com/_vercel/insights/script.js:0
-[    2363ms] [ERROR] Refused to execute script from 'https://mascotafood.com/_vercel/insights/script.js' because its MIME type ('text/plain') is not executable, and strict MIME type checking is enabled. @ https://mascotafood.com/#opiniones:0
