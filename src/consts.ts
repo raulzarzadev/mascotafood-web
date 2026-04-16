@@ -29,9 +29,8 @@ export const SITE = {
     directions: 'https://www.google.com/maps/dir/?api=1&destination=19.601954,-99.228176&destination_place_id=ChIJWTQ9MyAd0oURsgbYM7OWg60',
   },
   social: {
-    facebook: 'https://facebook.com/MascotaFoodVillas',
+    facebook: 'https://www.facebook.com/MascotaFoodVillas',
     instagram: 'https://www.instagram.com/mascotafoodmx/',
-    telegram: 'https://telegram.me/macotafood',
   },
 } as const;
 
