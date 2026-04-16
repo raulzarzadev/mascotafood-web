@@ -1,0 +1,92 @@
+---
+import { SITE } from '../consts';
+---
+
+<section id="inicio" class="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-accent-500/5">
+  <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
+    <div class="relative z-10">
+      <span class="inline-flex items-center gap-2 rounded-full bg-accent-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-700">
+        <span class="h-2 w-2 rounded-full bg-accent-500" aria-hidden="true"></span>
+        Servicio a domicilio GRATIS
+      </span>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-stone-900 sm:text-5xl lg:text-6xl">
+        {SITE.tagline}
+        <span class="mt-2 block bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent">
+          Alimento premium y accesorios
+        </span>
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-stone-700">
+        En <strong>{SITE.name}</strong> cuidamos a tu mascota como de la familia. Alimento premium para perros y gatos, juguetes, camas, bandanas y accesorios seleccionados, con entrega a domicilio en el Estado de México.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hola! Quisiera saber más sobre sus productos.')}`}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3 font-semibold text-white shadow-lg shadow-brand-600/20 transition hover:bg-brand-700 hover:shadow-xl"
+        >
+          Pide por WhatsApp
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a
+          href="#productos"
+          class="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-6 py-3 font-semibold text-stone-800 transition hover:border-brand-400 hover:text-brand-700"
+        >
+          Ver productos
+        </a>
+      </div>
+
+      <dl class="mt-12 grid grid-cols-3 gap-4 border-t border-stone-200 pt-6">
+        <div>
+          <dt class="text-xs uppercase text-stone-500">Marcas</dt>
+          <dd class="text-2xl font-bold text-brand-700">+30</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase text-stone-500">Productos</dt>
+          <dd class="text-2xl font-bold text-brand-700">500+</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase text-stone-500">Entrega</dt>
+          <dd class="text-2xl font-bold text-brand-700">Gratis</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="relative">
+      <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-brand-400/20 to-accent-500/20 blur-2xl" aria-hidden="true"></div>
+      <div class="relative grid grid-cols-2 gap-3">
+        <img
+          src="/images/mascota.jpeg"
+          alt="Perro feliz con productos Mascota Food"
+          class="col-span-2 h-64 w-full rounded-2xl object-cover shadow-xl sm:h-80"
+          width="800"
+          height="500"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <img
+          src="/images/alimentos_1.jpeg"
+          alt="Alimento premium para perros"
+          class="h-32 w-full rounded-xl object-cover shadow-md sm:h-40"
+          width="400"
+          height="300"
+          loading="eager"
+          decoding="async"
+        />
+        <img
+          src="/images/bandanas_dogfriend.jpeg"
+          alt="Bandanas para mascotas"
+          class="h-32 w-full rounded-xl object-cover shadow-md sm:h-40"
+          width="400"
+          height="300"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </div>
+</section>

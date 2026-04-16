@@ -1,0 +1,56 @@
+---
+import { SITE } from '../consts';
+---
+
+<section id="nosotros" class="bg-white py-20 sm:py-24">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+    <div class="relative">
+      <div class="grid grid-cols-2 gap-3">
+        <img
+          src="/images/mascota_a_dom.jpeg"
+          alt="Entrega a domicilio de Mascota Food"
+          class="h-56 w-full rounded-2xl object-cover shadow-md sm:h-64"
+          width="500"
+          height="350"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          src="/images/alimentos_3.jpeg"
+          alt="Variedad de alimento para mascotas"
+          class="mt-8 h-56 w-full rounded-2xl object-cover shadow-md sm:h-64"
+          width="500"
+          height="350"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+
+    <div>
+      <span class="text-sm font-semibold uppercase tracking-wide text-accent-600">Nuestro compromiso</span>
+      <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">
+        Cuidamos a tu mascota como si fuera nuestra
+      </h2>
+      <p class="mt-6 text-stone-700">
+        En <strong>{SITE.name}</strong> somos una tienda familiar dedicada a la venta de alimento premium y accesorios para perros y gatos. Seleccionamos cada producto pensando en la salud, diversión y bienestar de tu mascota, ofreciéndote <strong>calidad a precios justos</strong>.
+      </p>
+      <p class="mt-4 text-stone-700">
+        Porque sabemos que tu mascota es parte de la familia, llevamos todo hasta la puerta de tu casa, <strong>sin costo adicional</strong>, en nuestra zona de cobertura en el Estado de México.
+      </p>
+
+      <ul class="mt-8 space-y-3">
+        {['Marcas nacionales e importadas', 'Asesoría de expertos', 'Entregas puntuales y gratuitas', 'Productos para cada etapa de vida'].map((item) => (
+          <li class="flex items-center gap-3">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12l5 5L20 7" />
+              </svg>
+            </span>
+            <span class="text-stone-800">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

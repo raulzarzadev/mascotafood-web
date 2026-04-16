@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Products from '../components/Products.astro';
+import About from '../components/About.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../consts';
+---
+
+<Layout
+  title={`${SITE.name} — ${SITE.tagline} | Alimento premium para perros y gatos`}
+  description={SITE.description}
+>
+  <Header />
+  <main id="main">
+    <Hero />
+    <Features />
+    <Products />
+    <About />
+    <FAQ />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

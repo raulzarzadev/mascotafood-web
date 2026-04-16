@@ -1,0 +1,280 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Navegación principal" [ref=e4]:
+      - link "Inicio - Mascota Food" [ref=e5] [cursor=pointer]:
+        - /url: "#inicio"
+        - generic [ref=e6]: Mascota Food
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Inicio" [ref=e9] [cursor=pointer]:
+            - /url: "#inicio"
+        - listitem [ref=e10]:
+          - link "Productos" [ref=e11] [cursor=pointer]:
+            - /url: "#productos"
+        - listitem [ref=e12]:
+          - link "Nosotros" [ref=e13] [cursor=pointer]:
+            - /url: "#nosotros"
+        - listitem [ref=e14]:
+          - link "Preguntas" [ref=e15] [cursor=pointer]:
+            - /url: "#faq"
+        - listitem [ref=e16]:
+          - link "Contacto" [ref=e17] [cursor=pointer]:
+            - /url: "#contacto"
+      - link "WhatsApp" [ref=e18] [cursor=pointer]:
+        - /url: https://wa.me/525554941191?text=Hola!%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20productos.
+        - img [ref=e19]
+        - text: WhatsApp
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]: Servicio a domicilio GRATIS
+        - heading "Lo mejor para tu mejor amigo Alimento premium y accesorios" [level=1] [ref=e27]:
+          - text: Lo mejor para tu mejor amigo
+          - generic [ref=e28]: Alimento premium y accesorios
+        - paragraph [ref=e29]:
+          - text: En
+          - strong [ref=e30]: Mascota Food
+          - text: cuidamos a tu mascota como de la familia. Alimento premium para perros y gatos, juguetes, camas, bandanas y accesorios seleccionados, con entrega a domicilio en el Estado de México.
+        - generic [ref=e31]:
+          - link "Pide por WhatsApp" [ref=e32] [cursor=pointer]:
+            - /url: https://wa.me/525554941191?text=Hola!%20Quisiera%20saber%20m%C3%A1s%20sobre%20sus%20productos.
+            - text: Pide por WhatsApp
+            - img [ref=e33]
+          - link "Ver productos" [ref=e35] [cursor=pointer]:
+            - /url: "#productos"
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - term [ref=e38]: Marcas
+            - definition [ref=e39]: "+30"
+          - generic [ref=e40]:
+            - term [ref=e41]: Productos
+            - definition [ref=e42]: 500+
+          - generic [ref=e43]:
+            - term [ref=e44]: Entrega
+            - definition [ref=e45]: Gratis
+      - generic [ref=e48]:
+        - img "Perro feliz con productos Mascota Food" [ref=e49]
+        - img "Alimento premium para perros" [ref=e50]
+        - img "Bandanas para mascotas" [ref=e51]
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - img [ref=e57]
+        - heading "Envío a domicilio gratis" [level=3] [ref=e59]
+        - paragraph [ref=e60]: Recibe tus productos sin costo adicional dentro de nuestra zona de cobertura.
+      - generic [ref=e61]:
+        - img [ref=e63]
+        - heading "Productos premium" [level=3] [ref=e65]
+        - paragraph [ref=e66]: Marcas nacionales e importadas seleccionadas para la salud de tu mascota.
+      - generic [ref=e67]:
+        - img [ref=e69]
+        - heading "Asesoría personalizada" [level=3] [ref=e71]
+        - paragraph [ref=e72]: Te ayudamos a elegir el alimento ideal según raza, edad y necesidades.
+      - generic [ref=e73]:
+        - img [ref=e75]
+        - heading "Pago seguro" [level=3] [ref=e77]
+        - paragraph [ref=e78]: Tarjeta, transferencia o efectivo, como más te convenga.
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - text: Nuestros productos
+        - heading "Variedad de alimentos, marcas y presentaciones" [level=2] [ref=e82]
+        - paragraph [ref=e83]: Todo lo que tu perro o gato necesita para una vida feliz y saludable, seleccionado con el cuidado de quien también tiene mascota.
+      - generic [ref=e84]:
+        - article [ref=e85]:
+          - generic [ref=e86]:
+            - img "Alimento premium para perros" [ref=e87]
+            - generic [ref=e88]: Más vendido
+          - generic [ref=e89]:
+            - heading "Alimento premium para perros" [level=3] [ref=e90]
+            - paragraph [ref=e91]: Marcas nacionales e importadas para todas las razas, edades y necesidades especiales.
+            - link "Consultar sobre Alimento premium para perros por WhatsApp" [ref=e92] [cursor=pointer]:
+              - /url: https://wa.me/525554941191?text=Hola!%20Me%20interesa%3A%20Alimento%20premium%20para%20perros
+              - text: Consultar
+              - img [ref=e93]
+        - article [ref=e95]:
+          - img "Alimento para gatos" [ref=e97]
+          - generic [ref=e98]:
+            - heading "Alimento para gatos" [level=3] [ref=e99]
+            - paragraph [ref=e100]: Croquetas y húmedo premium seleccionado para cada etapa de vida de tu gato.
+            - link "Consultar sobre Alimento para gatos por WhatsApp" [ref=e101] [cursor=pointer]:
+              - /url: https://wa.me/525554941191?text=Hola!%20Me%20interesa%3A%20Alimento%20para%20gatos
+              - text: Consultar
+              - img [ref=e102]
+        - article [ref=e104]:
+          - generic [ref=e105]:
+            - img "Alimento a granel" [ref=e106]
+            - generic [ref=e107]: Ahorra más
+          - generic [ref=e108]:
+            - heading "Alimento a granel" [level=3] [ref=e109]
+            - paragraph [ref=e110]: La misma calidad premium en la cantidad exacta que necesitas, sin desperdicio.
+            - link "Consultar sobre Alimento a granel por WhatsApp" [ref=e111] [cursor=pointer]:
+              - /url: https://wa.me/525554941191?text=Hola!%20Me%20interesa%3A%20Alimento%20a%20granel
+              - text: Consultar
+              - img [ref=e112]
+        - article [ref=e114]:
+          - img "Premios y snacks" [ref=e116]
+          - generic [ref=e117]:
+            - heading "Premios y snacks" [level=3] [ref=e118]
+            - paragraph [ref=e119]: Recompensas naturales, galletas y snacks funcionales para consentir a tu mascota.
+            - link "Consultar sobre Premios y snacks por WhatsApp" [ref=e120] [cursor=pointer]:
+              - /url: https://wa.me/525554941191?text=Hola!%20Me%20interesa%3A%20Premios%20y%20snacks
+              - text: Consultar
+              - img [ref=e121]
+        - article [ref=e123]:
+          - img "Bandanas y accesorios" [ref=e125]
+          - generic [ref=e126]:
+            - heading "Bandanas y accesorios" [level=3] [ref=e127]
+            - paragraph [ref=e128]: Bandanas tejidas a mano, collares y accesorios de diseño para lucir a tu peludo.
+            - link "Consultar sobre Bandanas y accesorios por WhatsApp" [ref=e129] [cursor=pointer]:
+              - /url: https://wa.me/525554941191?text=Hola!%20Me%20interesa%3A%20Bandanas%20y%20accesorios
+              - text: Consultar
+              - img [ref=e130]
+        - article [ref=e132]:
+          - img "Juguetes" [ref=e134]
+          - generic [ref=e135]:
+            - heading "Juguetes" [level=3] [ref=e136]
+            - paragraph [ref=e137]: Juguetes resistentes, interactivos y mordedores que estimulan a tu mascota.
+            - link "Consultar sobre Juguetes por WhatsApp" [ref=e138] [cursor=pointer]:
+              - /url: https://wa.me/525554941191?text=Hola!%20Me%20interesa%3A%20Juguetes
+              - text: Consultar
+              - img [ref=e139]
+        - article [ref=e141]:
+          - img "Camas y descanso" [ref=e143]
+          - generic [ref=e144]:
+            - heading "Camas y descanso" [level=3] [ref=e145]
+            - paragraph [ref=e146]: Camas acolchadas, cojines y tapetes térmicos para el mejor descanso.
+            - link "Consultar sobre Camas y descanso por WhatsApp" [ref=e147] [cursor=pointer]:
+              - /url: https://wa.me/525554941191?text=Hola!%20Me%20interesa%3A%20Camas%20y%20descanso
+              - text: Consultar
+              - img [ref=e148]
+        - article [ref=e150]:
+          - img "Transportadoras" [ref=e152]
+          - generic [ref=e153]:
+            - heading "Transportadoras" [level=3] [ref=e154]
+            - paragraph [ref=e155]: Llévalo a donde sea, pero seguro. Transportadoras cómodas y certificadas.
+            - link "Consultar sobre Transportadoras por WhatsApp" [ref=e156] [cursor=pointer]:
+              - /url: https://wa.me/525554941191?text=Hola!%20Me%20interesa%3A%20Transportadoras
+              - text: Consultar
+              - img [ref=e157]
+    - generic [ref=e160]:
+      - generic [ref=e162]:
+        - img "Entrega a domicilio de Mascota Food" [ref=e163]
+        - img "Variedad de alimento para mascotas" [ref=e164]
+      - generic [ref=e165]:
+        - text: Nuestro compromiso
+        - heading "Cuidamos a tu mascota como si fuera nuestra" [level=2] [ref=e166]
+        - paragraph [ref=e167]:
+          - text: En
+          - strong [ref=e168]: Mascota Food
+          - text: somos una tienda familiar dedicada a la venta de alimento premium y accesorios para perros y gatos. Seleccionamos cada producto pensando en la salud, diversión y bienestar de tu mascota, ofreciéndote
+          - strong [ref=e169]: calidad a precios justos
+          - text: .
+        - paragraph [ref=e170]:
+          - text: Porque sabemos que tu mascota es parte de la familia, llevamos todo hasta la puerta de tu casa,
+          - strong [ref=e171]: sin costo adicional
+          - text: ", en nuestra zona de cobertura en el Estado de México."
+        - list [ref=e172]:
+          - listitem [ref=e173]:
+            - img [ref=e175]
+            - generic [ref=e177]: Marcas nacionales e importadas
+          - listitem [ref=e178]:
+            - img [ref=e180]
+            - generic [ref=e182]: Asesoría de expertos
+          - listitem [ref=e183]:
+            - img [ref=e185]
+            - generic [ref=e187]: Entregas puntuales y gratuitas
+          - listitem [ref=e188]:
+            - img [ref=e190]
+            - generic [ref=e192]: Productos para cada etapa de vida
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - text: Preguntas frecuentes
+        - heading "Resolvemos tus dudas" [level=2] [ref=e196]
+      - generic [ref=e197]:
+        - group [ref=e198]:
+          - generic "¿Hacen envíos a domicilio?" [ref=e199] [cursor=pointer]:
+            - generic [ref=e200]: ¿Hacen envíos a domicilio?
+            - img [ref=e202]
+          - paragraph [ref=e204]: Sí, contamos con servicio a domicilio gratis dentro de nuestra zona de cobertura en el Estado de México. Pregunta por WhatsApp si tu colonia aplica.
+        - group [ref=e205]:
+          - generic "¿Qué marcas de alimento manejan?" [ref=e206] [cursor=pointer]:
+            - generic [ref=e207]: ¿Qué marcas de alimento manejan?
+            - img [ref=e209]
+        - group [ref=e211]:
+          - generic "¿Venden alimento a granel?" [ref=e212] [cursor=pointer]:
+            - generic [ref=e213]: ¿Venden alimento a granel?
+            - img [ref=e215]
+        - group [ref=e217]:
+          - generic "¿Puedo pagar con tarjeta?" [ref=e218] [cursor=pointer]:
+            - generic [ref=e219]: ¿Puedo pagar con tarjeta?
+            - img [ref=e221]
+        - group [ref=e223]:
+          - generic "¿Tienen productos para gatos?" [ref=e224] [cursor=pointer]:
+            - generic [ref=e225]: ¿Tienen productos para gatos?
+            - img [ref=e227]
+    - generic [ref=e233]:
+      - heading "¿Listo para consentir a tu mascota?" [level=2] [ref=e234]
+      - paragraph [ref=e235]: Escríbenos por WhatsApp y recibe asesoría personalizada. Hacemos entregas a domicilio gratis en nuestra zona.
+      - generic [ref=e236]:
+        - link "WhatsApp 55 5494 1191" [ref=e237] [cursor=pointer]:
+          - /url: https://wa.me/525554941191?text=Hola!%20Quisiera%20hacer%20un%20pedido.
+          - img [ref=e239]
+          - heading "WhatsApp" [level=3] [ref=e241]
+          - paragraph [ref=e242]: 55 5494 1191
+        - link "Teléfono 55 5494 1191" [ref=e243] [cursor=pointer]:
+          - /url: tel:+525554941191
+          - img [ref=e245]
+          - heading "Teléfono" [level=3] [ref=e247]
+          - paragraph [ref=e248]: 55 5494 1191
+        - link "Correo contacto@mascotafood.com" [ref=e249] [cursor=pointer]:
+          - /url: mailto:contacto@mascotafood.com
+          - img [ref=e251]
+          - heading "Correo" [level=3] [ref=e254]
+          - paragraph [ref=e255]: contacto@mascotafood.com
+  - contentinfo [ref=e256]:
+    - generic [ref=e257]:
+      - generic [ref=e258]:
+        - generic [ref=e260]: Mascota Food
+        - paragraph [ref=e261]: Tienda especializada en alimento premium para perros y gatos, accesorios, juguetes y artículos para mascotas en el Estado de México. Servicio a domicilio gratis.
+        - generic [ref=e262]:
+          - link "Facebook" [ref=e263] [cursor=pointer]:
+            - /url: https://facebook.com/MascotaFoodVillas
+            - img [ref=e264]
+          - link "Telegram" [ref=e266] [cursor=pointer]:
+            - /url: https://telegram.me/macotafood
+            - img [ref=e267]
+          - link "WhatsApp" [ref=e269] [cursor=pointer]:
+            - /url: https://wa.me/525554941191
+            - img [ref=e270]
+      - generic [ref=e272]:
+        - heading "Navegación" [level=3] [ref=e273]
+        - list [ref=e274]:
+          - listitem [ref=e275]:
+            - link "Inicio" [ref=e276] [cursor=pointer]:
+              - /url: "#inicio"
+          - listitem [ref=e277]:
+            - link "Productos" [ref=e278] [cursor=pointer]:
+              - /url: "#productos"
+          - listitem [ref=e279]:
+            - link "Nosotros" [ref=e280] [cursor=pointer]:
+              - /url: "#nosotros"
+          - listitem [ref=e281]:
+            - link "Preguntas" [ref=e282] [cursor=pointer]:
+              - /url: "#faq"
+          - listitem [ref=e283]:
+            - link "Contacto" [ref=e284] [cursor=pointer]:
+              - /url: "#contacto"
+      - generic [ref=e285]:
+        - heading "Contacto" [level=3] [ref=e286]
+        - list [ref=e287]:
+          - listitem [ref=e288]:
+            - link "55 5494 1191" [ref=e289] [cursor=pointer]:
+              - /url: tel:+525554941191
+          - listitem [ref=e290]:
+            - link "contacto@mascotafood.com" [ref=e291] [cursor=pointer]:
+              - /url: mailto:contacto@mascotafood.com
+          - listitem [ref=e292]: Villas del Real, Estado de México
+    - generic [ref=e294]:
+      - paragraph [ref=e295]: © 2026 Mascota Food. Todos los derechos reservados.
+      - paragraph [ref=e296]: Hecho con ♥ para tu mejor amigo.
