@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE, REVIEWS, REVIEWS_AGGREGATE, PRODUCTS, DELIVERY_ZONES, NEARBY_ZONES } from '../consts';
+import { SITE, REVIEWS, REVIEWS_AGGREGATE, PRODUCTS, DELIVERY_ZONES, NEARBY_ZONES, BRANDS } from '../consts';
 
 interface Props {
   title?: string;
@@ -37,6 +37,7 @@ const graphJsonLd = {
         height: 512,
       },
       sameAs: [SITE.social.facebook, SITE.social.instagram],
+      knowsAbout: BRANDS.map((b) => b.name),
     },
     {
       '@type': 'WebSite',

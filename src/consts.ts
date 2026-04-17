@@ -39,6 +39,26 @@ export const SITE = {
   },
 } as const;
 
+export const BRANDS = [
+  { name: 'Nupec', category: 'perros-gatos', tagline: 'Nutrición canina y felina científica' },
+  { name: 'Pro Plan', category: 'perros-gatos', tagline: 'Purina · fórmulas premium' },
+  { name: 'Dog Chow', category: 'perros', tagline: 'Purina · nutrición completa' },
+  { name: 'Cat Chow', category: 'gatos', tagline: 'Purina · para cada etapa felina' },
+  { name: 'Whiskas', category: 'gatos', tagline: 'Seco y húmedo para gatos' },
+  { name: 'Felix', category: 'gatos', tagline: 'Purina · sabores irresistibles' },
+  { name: 'Mimi', category: 'gatos', tagline: 'Alimento húmedo en lata' },
+  { name: 'Minino', category: 'perros-gatos', tagline: 'Opción accesible y balanceada' },
+  { name: 'Nucan', category: 'perros', tagline: 'Alimento canino' },
+  { name: 'Línea El Nogal', category: 'otros', tagline: 'Aves, conejos y animales de granja' },
+] as const;
+
+export const BRAND_CATEGORIES = {
+  perros: { label: 'Perros', icon: 'dog' },
+  gatos: { label: 'Gatos', icon: 'cat' },
+  'perros-gatos': { label: 'Perros y gatos', icon: 'paw' },
+  otros: { label: 'Otras mascotas', icon: 'rabbit' },
+} as const;
+
 export const DELIVERY_ZONES = [
   { name: 'Villas de la Hacienda', postalCode: '52929', highlight: true, tier: 'primary' },
   { name: 'Hacienda de la Luz', postalCode: '52929', tier: 'primary' },
@@ -125,8 +145,8 @@ export const REVIEWS_AGGREGATE = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: 'Inicio', href: '#inicio' },
   { label: 'Productos', href: '#productos' },
+  { label: 'Marcas', href: '#marcas' },
   { label: 'Entregas', href: '#zonas' },
   { label: 'Opiniones', href: '#opiniones' },
   { label: 'Ubicación', href: '#ubicacion' },
