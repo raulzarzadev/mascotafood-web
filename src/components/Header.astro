@@ -1,13 +1,15 @@
 ---
 import { SITE, NAV_LINKS } from '../consts';
+
+const whatsappHref = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hola! Me gustaría saber más sobre sus productos.')}`;
 ---
 
-<header class="sticky top-0 z-40 border-b border-brand-100 bg-white/80 backdrop-blur-md">
+<header class="sticky top-0 z-40 border-b border-brand-100 bg-white/85 backdrop-blur-md">
   <nav
-    class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-8"
+    class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
     aria-label="Navegación principal"
   >
-    <a href="#inicio" class="flex items-center gap-2 font-bold text-brand-700">
+    <a href="/#inicio" class="flex items-center gap-2 font-bold text-brand-700">
       <img
         src="/icons/LogoMascotaFoodSigno.gif"
         alt="Mascota Food logotipo"
@@ -34,15 +36,166 @@ import { SITE, NAV_LINKS } from '../consts';
     </ul>
 
     <a
-      href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hola! Me gustaría saber más sobre sus productos.')}`}
+      href={whatsappHref}
       target="_blank"
       rel="noopener"
-      class="hidden items-center gap-2 rounded-full bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 sm:inline-flex"
+      class="hidden items-center gap-2 rounded-full bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 sm:inline-flex"
     >
       <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M20.52 3.48A11.78 11.78 0 0 0 12.07 0C5.55 0 .24 5.3.24 11.83a11.7 11.7 0 0 0 1.6 5.94L0 24l6.4-1.67a11.79 11.79 0 0 0 5.66 1.44h.01c6.52 0 11.83-5.3 11.83-11.83 0-3.16-1.23-6.13-3.38-8.36ZM12.07 21.72h-.01a9.86 9.86 0 0 1-5.02-1.38l-.36-.21-3.8 1 1.02-3.71-.23-.38a9.84 9.84 0 0 1-1.5-5.21c0-5.44 4.43-9.86 9.89-9.86 2.64 0 5.13 1.03 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.44-4.43 9.85-9.89 9.85Zm5.41-7.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07a8.11 8.11 0 0 1-2.39-1.47 9 9 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.3 1.26.48 1.69.62.71.23 1.35.2 1.86.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35Z"/>
+        <path d="M20.52 3.48A11.78 11.78 0 0 0 12.07 0C5.55 0 .24 5.3.24 11.83a11.7 11.7 0 0 0 1.6 5.94L0 24l6.4-1.67a11.79 11.79 0 0 0 5.66 1.44c6.52 0 11.83-5.3 11.83-11.83 0-3.16-1.23-6.13-3.38-8.36Z"/>
       </svg>
       WhatsApp
     </a>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-full text-stone-800 transition hover:bg-brand-50 md:hidden"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Abrir menú"
+    >
+      <svg data-icon="open" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg data-icon="close" class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 6l12 12M6 18 18 6"/>
+      </svg>
+    </button>
   </nav>
+
+  <div
+    id="mobile-backdrop"
+    class="pointer-events-none fixed inset-0 z-40 bg-stone-900/50 opacity-0 transition-opacity duration-200 md:hidden"
+    aria-hidden="true"
+  ></div>
+
+  <aside
+    id="mobile-menu"
+    class="fixed top-0 right-0 z-50 flex h-[100dvh] w-[85%] max-w-sm translate-x-full flex-col bg-white shadow-xl transition-transform duration-300 ease-out md:hidden"
+    aria-label="Menú móvil"
+    aria-hidden="true"
+  >
+    <div class="flex items-center justify-between border-b border-stone-200 px-5 py-4">
+      <div class="flex items-center gap-2 font-bold text-brand-700">
+        <img
+          src="/icons/LogoMascotaFoodSigno.gif"
+          alt=""
+          width="32"
+          height="32"
+          class="h-8 w-8 rounded-full"
+          loading="lazy"
+          decoding="async"
+        />
+        <span>{SITE.name}</span>
+      </div>
+      <button
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100"
+        data-menu-close
+        aria-label="Cerrar menú"
+      >
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 6l12 12M6 18 18 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="flex-1 overflow-y-auto px-2 py-4">
+      {NAV_LINKS.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-semibold text-stone-800 transition hover:bg-brand-50 hover:text-brand-700"
+            data-menu-link
+          >
+            {link.label}
+            <svg class="h-4 w-4 text-stone-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="space-y-2 border-t border-stone-200 p-4">
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noopener"
+        class="flex w-full items-center justify-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700"
+        data-menu-link
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.52 3.48A11.78 11.78 0 0 0 12.07 0C5.55 0 .24 5.3.24 11.83a11.7 11.7 0 0 0 1.6 5.94L0 24l6.4-1.67a11.79 11.79 0 0 0 5.66 1.44c6.52 0 11.83-5.3 11.83-11.83 0-3.16-1.23-6.13-3.38-8.36Z"/>
+        </svg>
+        Pedir por WhatsApp
+      </a>
+      <a
+        href={`tel:${SITE.phone}`}
+        class="flex w-full items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition hover:border-brand-400 hover:text-brand-700"
+        data-menu-link
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92V21a1 1 0 0 1-1.11 1 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 3.18 4.11 1 1 0 0 1 4.18 3h4.09a1 1 0 0 1 1 .75l.94 3.13a1 1 0 0 1-.25 1L8.31 9.57a16 16 0 0 0 6 6l1.71-1.64a1 1 0 0 1 1-.25l3.13.94a1 1 0 0 1 .85 1.3Z"/>
+        </svg>
+        Llamar {SITE.phoneDisplay}
+      </a>
+    </div>
+  </aside>
 </header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('mobile-backdrop');
+
+  if (toggle && menu && backdrop) {
+    const iconOpen = toggle.querySelector('[data-icon="open"]');
+    const iconClose = toggle.querySelector('[data-icon="close"]');
+
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      menu.setAttribute('aria-hidden', String(!open));
+
+      if (open) {
+        menu.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100');
+        iconOpen?.classList.add('hidden');
+        iconClose?.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        menu.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        backdrop.classList.remove('opacity-100');
+        iconOpen?.classList.remove('hidden');
+        iconClose?.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setOpen(!isOpen);
+    });
+
+    backdrop.addEventListener('click', () => setOpen(false));
+
+    menu.querySelectorAll('[data-menu-close]').forEach((el) => {
+      el.addEventListener('click', () => setOpen(false));
+    });
+
+    menu.querySelectorAll('[data-menu-link]').forEach((el) => {
+      el.addEventListener('click', () => setOpen(false));
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        (toggle as HTMLButtonElement).focus();
+      }
+    });
+  }
+</script>
