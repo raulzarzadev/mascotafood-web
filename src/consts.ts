@@ -6,7 +6,8 @@ export const SITE = {
   tagline: 'Lo mejor para tu mejor amigo',
   localTagline: 'Tu tienda de mascotas en Villas de la Hacienda, Atizapán',
   description:
-    'Mascota Food Villas — tienda de alimento premium para perros y gatos en Villas de la Hacienda, Atizapán de Zaragoza. Accesorios, juguetes y servicio a domicilio gratis en el Estado de México.',
+    'Mascota Food Villas — tienda de alimento premium para perros, gatos, conejos, tortugas y peces en Villas de la Hacienda, Atizapán de Zaragoza. Accesorios, juguetes y envío gratis en un radio de 3 km.',
+  foundingYear: 2021,
   url: 'https://mascotafood.com',
   locale: 'es_MX',
   phone: '+525554941191',
@@ -37,27 +38,57 @@ export const SITE = {
     facebook: 'https://www.facebook.com/MascotaFoodVillas',
     instagram: 'https://www.instagram.com/mascotafoodmx/',
   },
+  policies: {
+    minOrderMXN: 150,
+    freeDeliveryRadiusKm: 3,
+    payments: ['Efectivo', 'Transferencia', 'Tarjeta de crédito', 'Tarjeta de débito'],
+  },
+  hours: [
+    { days: 'Lunes a Sábado', opens: '09:00', closes: '19:00' },
+    { days: 'Domingo', opens: null, closes: null, note: 'Cerrado' },
+  ],
 } as const;
 
 export const BRANDS = [
-  { name: 'Nupec', category: 'perros-gatos', tagline: 'Nutrición canina y felina científica' },
-  { name: 'Pro Plan', category: 'perros-gatos', tagline: 'Purina · fórmulas premium' },
+  // Perros (15)
+  { name: 'Nupec', category: 'perros', tagline: 'Nutrición canina científica' },
+  { name: 'Pro Plan', category: 'perros', tagline: 'Purina · fórmula premium' },
+  { name: 'Royal Canin', category: 'perros', tagline: 'Sobre pedido · razas específicas' },
+  { name: "Hill's", category: 'perros', tagline: 'Sobre pedido · prescripción veterinaria' },
   { name: 'Dog Chow', category: 'perros', tagline: 'Purina · nutrición completa' },
-  { name: 'Cat Chow', category: 'gatos', tagline: 'Purina · para cada etapa felina' },
-  { name: 'Whiskas', category: 'gatos', tagline: 'Seco y húmedo para gatos' },
+  { name: 'Pedigree', category: 'perros', tagline: 'Adultos y cachorros' },
+  { name: 'Nucan', category: 'perros', tagline: 'Alimento canino balanceado' },
+  { name: 'Ganador', category: 'perros', tagline: 'Alimento accesible' },
+  { name: 'Campeón', category: 'perros', tagline: 'Nutrición diaria' },
+  { name: 'Top Choice', category: 'perros', tagline: 'Económico y balanceado' },
+  { name: 'Poder Canino', category: 'perros', tagline: 'Para todas las razas' },
+  { name: 'Súper Can', category: 'perros', tagline: 'Alimento completo' },
+  { name: 'Shaggy', category: 'perros', tagline: 'Alimento canino' },
+  { name: 'Nutrescan', category: 'perros', tagline: 'Alimento balanceado' },
+  { name: 'Alfa Dog', category: 'perros', tagline: 'Para razas grandes y medianas' },
+
+  // Gatos (5)
+  { name: 'Cat Chow', category: 'gatos', tagline: 'Purina · cada etapa felina' },
+  { name: 'Minino', category: 'gatos', tagline: 'Diario y accesible' },
   { name: 'Felix', category: 'gatos', tagline: 'Purina · sabores irresistibles' },
-  { name: 'Mimi', category: 'gatos', tagline: 'Alimento húmedo en lata' },
-  { name: 'Minino', category: 'perros-gatos', tagline: 'Opción accesible y balanceada' },
-  { name: 'Nucan', category: 'perros', tagline: 'Alimento canino' },
-  { name: 'Línea El Nogal', category: 'otros', tagline: 'Aves, conejos y animales de granja' },
+  { name: 'Gatina', category: 'gatos', tagline: 'Alimento felino' },
+  { name: 'Nucat Perfect Sense', category: 'gatos', tagline: 'Nutrición especializada' },
+
+  // Arena / cuidado (1)
+  { name: 'Alfa Cat', category: 'arena', tagline: 'Arena para gato' },
 ] as const;
 
 export const BRAND_CATEGORIES = {
   perros: { label: 'Perros', icon: 'dog' },
   gatos: { label: 'Gatos', icon: 'cat' },
-  'perros-gatos': { label: 'Perros y gatos', icon: 'paw' },
-  otros: { label: 'Otras mascotas', icon: 'rabbit' },
+  arena: { label: 'Arenas para gato', icon: 'paw' },
 } as const;
+
+export const SMALL_PETS = [
+  'Alimento para conejo',
+  'Alimento para tortuga',
+  'Alimento para pez',
+] as const;
 
 export const DELIVERY_ZONES = [
   { name: 'Villas de la Hacienda', postalCode: '52929', highlight: true, tier: 'primary' },
@@ -209,30 +240,46 @@ export const PRODUCTS = [
 export const FAQS = [
   {
     q: '¿Hacen envíos a domicilio?',
-    a: 'Sí, contamos con servicio a domicilio gratis dentro de nuestra zona de cobertura en el Estado de México. Pregunta por WhatsApp si tu colonia aplica.',
+    a: 'Sí. El envío es gratis dentro de un radio de 3 km desde nuestra tienda en Villas de la Hacienda. A distancias mayores aplica un costo de envío que te confirmamos por WhatsApp según tu dirección.',
   },
   {
-    q: '¿Qué marcas de alimento manejan?',
-    a: 'Manejamos las principales marcas premium nacionales e importadas para perros y gatos, incluyendo opciones para razas específicas, cachorros, adultos, senior y dietas especiales.',
+    q: '¿Cuál es el pedido mínimo?',
+    a: 'El pedido mínimo a domicilio es de $150 MXN. No hay mínimo para compras en tienda.',
   },
   {
-    q: '¿Venden alimento a granel?',
-    a: 'Sí, ofrecemos alimento a granel de alta calidad para que lleves la cantidad exacta que necesitas, cuidando tu bolsillo y la frescura del producto.',
-  },
-  {
-    q: '¿Puedo pagar con tarjeta?',
-    a: 'Aceptamos pagos con tarjeta de crédito y débito, transferencia y efectivo, tanto en tienda como en entregas a domicilio.',
-  },
-  {
-    q: '¿Tienen productos para gatos?',
-    a: '¡Por supuesto! Contamos con alimento premium, arenas, juguetes, rascadores y accesorios especialmente pensados para gatos.',
+    q: '¿Qué métodos de pago aceptan?',
+    a: 'Aceptamos efectivo, transferencia bancaria y tarjeta de crédito o débito, tanto en tienda como en entregas a domicilio.',
   },
   {
     q: '¿Dónde están ubicados?',
     a: 'Nos encuentras en Mz. 1 Lt. 3, Hacienda de la Luz, dentro de Villas de la Hacienda, en Atizapán de Zaragoza, Estado de México (CP 52929). En la sección "Visítanos" puedes abrir la ruta directa en Google Maps o Waze.',
   },
   {
+    q: '¿Cuál es su horario?',
+    a: 'Atendemos de lunes a sábado de 9:00 a 19:00. Los domingos permanecemos cerrados.',
+  },
+  {
+    q: '¿Qué marcas de alimento manejan?',
+    a: 'Para perro: Nupec, Pro Plan, Dog Chow, Pedigree, Nucan, Ganador, Campeón, Top Choice, Poder Canino, Súper Can, Shaggy, Nutrescan, Alfa Dog y más. Royal Canin y Hill\'s los traemos sobre pedido. Para gato: Cat Chow, Minino, Felix, Gatina y Nucat Perfect Sense.',
+  },
+  {
+    q: '¿Tienen Royal Canin o Hill\'s?',
+    a: 'Sí, ambas marcas las manejamos sobre pedido. Escríbenos por WhatsApp con la presentación específica que necesitas y te confirmamos tiempo de entrega y precio.',
+  },
+  {
+    q: '¿Venden alimento a granel?',
+    a: 'Sí, ofrecemos alimento a granel para que lleves la cantidad exacta que necesitas, cuidando tu bolsillo y la frescura del producto.',
+  },
+  {
+    q: '¿Tienen productos para gatos?',
+    a: 'Sí: alimento premium (Cat Chow, Minino, Felix, Gatina, Nucat Perfect Sense), arena Alfa Cat, juguetes, rascadores y accesorios.',
+  },
+  {
+    q: '¿Manejan productos para otras mascotas?',
+    a: 'Sí, contamos con alimento para conejo, tortuga y pez. También accesorios, juguetes, transportadoras, casas y camas para tu mascota.',
+  },
+  {
     q: '¿A qué zonas llegan con el servicio a domicilio?',
-    a: 'Nuestra zona principal es Villas de la Hacienda y las colonias cercanas de Atizapán de Zaragoza; también cubrimos Cuautitlán Izcalli, Tlalnepantla y otros municipios vecinos del Estado de México. Pregúntanos por WhatsApp si tu colonia aplica.',
+    a: 'Entrega gratuita en un radio de 3 km alrededor de Villas de la Hacienda: principalmente Hacienda de la Luz, Lomas de la Hacienda, Adolfo López Mateos, Hacienda del Pedregal, Lomas de Atizapán, Las Arboledas y Bosques de Atizapán. A distancias mayores confirmamos costo de envío y tiempos por WhatsApp.',
   },
 ] as const;

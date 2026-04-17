@@ -10,8 +10,18 @@ import { DELIVERY_ZONES, NEARBY_ZONES, POSTAL_CODE_RANGE, SITE } from '../consts
         Zonas donde llegamos sin costo
       </h2>
       <p class="mt-4 text-stone-600">
-        Llevamos tu pedido directo a la puerta de tu casa en <strong>Atizapán de Zaragoza</strong> y municipios vecinos. Cobertura principal en los códigos postales <strong>{POSTAL_CODE_RANGE.primary}</strong>.
+        Llevamos tu pedido directo a la puerta de tu casa. <strong>Envío gratis en un radio de {SITE.policies.freeDeliveryRadiusKm} km</strong> alrededor de Villas de la Hacienda. A distancias mayores aplica costo de envío. Pedido mínimo a domicilio: <strong>${SITE.policies.minOrderMXN} MXN</strong>.
       </p>
+      <ul class="mx-auto mt-5 flex max-w-2xl flex-wrap justify-center gap-2">
+        {SITE.policies.payments.map((method) => (
+          <li class="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1 text-xs font-medium text-stone-700 ring-1 ring-stone-200">
+            <svg class="h-3.5 w-3.5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12l5 5L20 7"/>
+            </svg>
+            {method}
+          </li>
+        ))}
+      </ul>
     </div>
 
     <div class="mt-14 grid gap-8 lg:grid-cols-2">
@@ -110,7 +120,7 @@ import { DELIVERY_ZONES, NEARBY_ZONES, POSTAL_CODE_RANGE, SITE } from '../consts
     </div>
 
     <p class="mx-auto mt-10 max-w-3xl rounded-xl bg-white p-4 text-center text-xs text-stone-500 ring-1 ring-stone-200">
-      Los tiempos de entrega varían según tu ubicación. Pedidos en la <strong>zona principal (CP {POSTAL_CODE_RANGE.primary})</strong> suelen entregarse el mismo día.
+      Cobertura principal en códigos postales <strong>{POSTAL_CODE_RANGE.primary}</strong>. Los tiempos de entrega varían según tu ubicación; pedidos dentro del radio de {SITE.policies.freeDeliveryRadiusKm} km suelen entregarse el mismo día.
     </p>
   </div>
 </section>
