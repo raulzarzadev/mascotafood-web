@@ -40,14 +40,37 @@ export const SITE = {
 } as const;
 
 export const DELIVERY_ZONES = [
-  { name: 'Villas de la Hacienda', postalCode: '52929', highlight: true },
-  { name: 'Adolfo López Mateos' },
-  { name: 'Hacienda del Pedregal' },
-  { name: 'Bosques del Valle' },
-  { name: 'Lomas de Atizapán' },
-  { name: 'Lomas de la Hacienda' },
-  { name: 'Arboledas' },
+  { name: 'Villas de la Hacienda', postalCode: '52929', highlight: true, tier: 'primary' },
+  { name: 'Hacienda de la Luz', postalCode: '52929', tier: 'primary' },
+  { name: 'Lomas de la Hacienda', postalCode: '52925', tier: 'primary' },
+  { name: 'Hacienda del Pedregal', postalCode: '52916', tier: 'primary' },
+  { name: 'Adolfo López Mateos', postalCode: '52910', tier: 'primary' },
+  { name: 'Lomas de Atizapán', postalCode: '52977', tier: 'primary' },
+  { name: 'Las Arboledas', postalCode: '52950', tier: 'primary' },
+  { name: 'Bosques de Atizapán', postalCode: '52967', tier: 'primary' },
 ] as const;
+
+export const NEARBY_ZONES = [
+  { name: 'San José el Jaral', postalCode: '52924' },
+  { name: 'Villa Jardín', postalCode: '52923' },
+  { name: 'Villa San José', postalCode: '52926' },
+  { name: 'Jardines de Monterrey', postalCode: '52926' },
+  { name: 'San Miguel Xochimanga', postalCode: '52927' },
+  { name: 'Lomas de San Miguel', postalCode: '52928' },
+  { name: 'Prados de Ixtacala', postalCode: '52928' },
+  { name: 'El Pedregal de Atizapán', postalCode: '52948' },
+  { name: 'Rinconada de las Arboledas', postalCode: '52945' },
+  { name: 'Vergel de Arboledas', postalCode: '52945' },
+  { name: 'Calacoaya', postalCode: '52990' },
+  { name: 'Las Alamedas', postalCode: '52970' },
+  { name: 'México Nuevo', postalCode: '52966' },
+  { name: 'Condado de Sayavedra', postalCode: '52938' },
+] as const;
+
+export const POSTAL_CODE_RANGE = {
+  primary: '52910–52977',
+  description: 'Atizapán de Zaragoza (colonias 529XX)',
+} as const;
 
 export const REVIEWS = [
   {

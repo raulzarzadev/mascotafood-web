@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE, REVIEWS, REVIEWS_AGGREGATE, PRODUCTS, DELIVERY_ZONES } from '../consts';
+import { SITE, REVIEWS, REVIEWS_AGGREGATE, PRODUCTS, DELIVERY_ZONES, NEARBY_ZONES } from '../consts';
 
 interface Props {
   title?: string;
@@ -74,7 +74,28 @@ const graphJsonLd = {
       },
       hasMap: SITE.maps.url,
       areaServed: [
-        ...DELIVERY_ZONES.map((z) => ({ '@type': 'Place', name: z.name })),
+        ...DELIVERY_ZONES.map((z) => ({
+          '@type': 'Place',
+          name: `${z.name}, Atizapán de Zaragoza`,
+          address: {
+            '@type': 'PostalAddress',
+            postalCode: z.postalCode,
+            addressLocality: 'Atizapán de Zaragoza',
+            addressRegion: 'Estado de México',
+            addressCountry: 'MX',
+          },
+        })),
+        ...NEARBY_ZONES.map((z) => ({
+          '@type': 'Place',
+          name: `${z.name}, Atizapán de Zaragoza`,
+          address: {
+            '@type': 'PostalAddress',
+            postalCode: z.postalCode,
+            addressLocality: 'Atizapán de Zaragoza',
+            addressRegion: 'Estado de México',
+            addressCountry: 'MX',
+          },
+        })),
         { '@type': 'City', name: 'Atizapán de Zaragoza' },
         { '@type': 'City', name: 'Cuautitlán Izcalli' },
         { '@type': 'City', name: 'Tlalnepantla' },

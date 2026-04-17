@@ -1,70 +1,116 @@
 ---
-import { DELIVERY_ZONES, SITE } from '../consts';
+import { DELIVERY_ZONES, NEARBY_ZONES, POSTAL_CODE_RANGE, SITE } from '../consts';
 ---
 
 <section id="zonas" class="bg-stone-50 py-20 sm:py-24">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <div class="grid items-start gap-10 lg:grid-cols-5">
-      <div class="lg:col-span-2">
-        <span class="text-sm font-semibold uppercase tracking-wide text-accent-600">Entrega gratis</span>
-        <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">
-          Zonas donde llegamos sin costo
-        </h2>
-        <p class="mt-4 text-stone-600">
-          Llevamos tu pedido directo a la puerta de tu casa en <strong>Atizapán de Zaragoza</strong> y colonias vecinas. Si no encuentras tu colonia, escríbenos por WhatsApp —solemos tener cobertura más amplia de la que listamos.
-        </p>
+    <div class="mx-auto max-w-2xl text-center">
+      <span class="text-sm font-semibold uppercase tracking-wide text-accent-600">Entrega gratis</span>
+      <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">
+        Zonas donde llegamos sin costo
+      </h2>
+      <p class="mt-4 text-stone-600">
+        Llevamos tu pedido directo a la puerta de tu casa en <strong>Atizapán de Zaragoza</strong> y municipios vecinos. Cobertura principal en los códigos postales <strong>{POSTAL_CODE_RANGE.primary}</strong>.
+      </p>
+    </div>
 
-        <a
-          href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hola! Quisiera saber si llegan a mi colonia.')}`}
-          target="_blank"
-          rel="noopener"
-          class="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-3 font-semibold text-white shadow-md shadow-brand-600/20 transition hover:bg-brand-700"
-        >
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M20.52 3.48A11.78 11.78 0 0 0 12.07 0C5.55 0 .24 5.3.24 11.83a11.7 11.7 0 0 0 1.6 5.94L0 24l6.4-1.67a11.79 11.79 0 0 0 5.66 1.44h.01c6.52 0 11.83-5.3 11.83-11.83 0-3.16-1.23-6.13-3.38-8.36Z"/>
-          </svg>
-          ¿Llegan a mi colonia?
-        </a>
-      </div>
+    <div class="mt-14 grid gap-8 lg:grid-cols-2">
+      <article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-100 sm:p-8">
+        <div class="flex items-center gap-3">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </span>
+          <div>
+            <h3 class="font-bold text-stone-900">Zona principal</h3>
+            <p class="text-xs text-stone-500">Entrega gratuita el mismo día</p>
+          </div>
+        </div>
 
-      <div class="lg:col-span-3">
-        <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <ul class="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
           {DELIVERY_ZONES.map((zone) => (
             <li
               class:list={[
-                'flex items-center gap-3 rounded-xl border bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md',
-                zone.highlight ? 'border-brand-300 ring-2 ring-brand-100' : 'border-stone-200',
+                'flex items-center justify-between gap-3 rounded-lg border px-3 py-2.5',
+                zone.highlight
+                  ? 'border-brand-300 bg-brand-50'
+                  : 'border-stone-200 bg-stone-50',
               ]}
             >
+              <span class="min-w-0">
+                <span class="block truncate text-sm font-semibold text-stone-900">{zone.name}</span>
+                {zone.highlight && (
+                  <span class="text-[11px] font-semibold uppercase tracking-wide text-brand-700">Aquí estamos</span>
+                )}
+              </span>
               <span
                 class:list={[
-                  'flex h-9 w-9 shrink-0 items-center justify-center rounded-full',
-                  zone.highlight ? 'bg-brand-600 text-white' : 'bg-brand-100 text-brand-700',
+                  'shrink-0 rounded-full px-2 py-0.5 font-mono text-xs font-semibold',
+                  zone.highlight
+                    ? 'bg-brand-600 text-white'
+                    : 'bg-white text-stone-700 ring-1 ring-stone-200',
                 ]}
-                aria-hidden="true"
               >
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
+                {zone.postalCode}
               </span>
-              <div class="min-w-0 flex-1">
-                <p class="font-semibold text-stone-900">{zone.name}</p>
-                {('postalCode' in zone) && zone.postalCode && (
-                  <p class="text-xs text-stone-500">CP {zone.postalCode}{zone.highlight ? ' · Nuestra sede' : ''}</p>
-                )}
-                {zone.highlight && !('postalCode' in zone && zone.postalCode) && (
-                  <p class="text-xs text-brand-700">Nuestra sede</p>
-                )}
-              </div>
             </li>
           ))}
         </ul>
 
-        <p class="mt-6 rounded-xl bg-white p-4 text-sm text-stone-600 ring-1 ring-stone-200">
-          <strong class="text-stone-900">¿Estás más lejos?</strong> También hacemos entregas en Cuautitlán Izcalli, Tlalnepantla y otros municipios del norte del Estado de México. Envíanos por WhatsApp tu dirección y te confirmamos cobertura y tiempos.
+        <a
+          href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hola! Quisiera hacer un pedido a domicilio.')}`}
+          target="_blank"
+          rel="noopener"
+          class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-600 px-5 py-3 font-semibold text-white shadow-md shadow-brand-600/20 transition hover:bg-brand-700"
+        >
+          Pedir a domicilio por WhatsApp
+        </a>
+      </article>
+
+      <article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200 sm:p-8">
+        <div class="flex items-center gap-3">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent-500/10 text-accent-700">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>
+            </svg>
+          </span>
+          <div>
+            <h3 class="font-bold text-stone-900">Otras colonias cercanas</h3>
+            <p class="text-xs text-stone-500">Consulta cobertura y tiempos por WhatsApp</p>
+          </div>
+        </div>
+
+        <ul class="mt-5 flex flex-wrap gap-2">
+          {NEARBY_ZONES.map((zone) => (
+            <li class="inline-flex items-center gap-2 rounded-full bg-stone-100 py-1.5 pl-3 pr-1.5 text-sm text-stone-800">
+              <span class="truncate">{zone.name}</span>
+              <span class="shrink-0 rounded-full bg-white px-2 py-0.5 font-mono text-[11px] font-semibold text-stone-600 ring-1 ring-stone-200">
+                {zone.postalCode}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <p class="mt-5 text-sm text-stone-600">
+          También hacemos entregas en <strong>Cuautitlán Izcalli</strong>, <strong>Tlalnepantla</strong> y otros municipios del norte del Estado de México. Si tu colonia no aparece en las listas, <strong>pregúntanos</strong>.
         </p>
-      </div>
+
+        <a
+          href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hola! ¿Entregan en mi colonia? Mi dirección es…')}`}
+          target="_blank"
+          rel="noopener"
+          class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-3 font-semibold text-stone-800 transition hover:border-brand-400 hover:text-brand-700"
+        >
+          ¿Llegan a mi colonia?
+        </a>
+      </article>
     </div>
+
+    <p class="mx-auto mt-10 max-w-3xl rounded-xl bg-white p-4 text-center text-xs text-stone-500 ring-1 ring-stone-200">
+      Los tiempos de entrega varían según tu ubicación. Pedidos en la <strong>zona principal (CP {POSTAL_CODE_RANGE.primary})</strong> suelen entregarse el mismo día.
+    </p>
   </div>
 </section>
