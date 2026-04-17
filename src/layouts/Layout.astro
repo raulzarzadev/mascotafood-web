@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE, REVIEWS, REVIEWS_AGGREGATE, PRODUCTS } from '../consts';
+import { SITE, REVIEWS, REVIEWS_AGGREGATE, PRODUCTS, DELIVERY_ZONES } from '../consts';
 
 interface Props {
   title?: string;
@@ -74,7 +74,7 @@ const graphJsonLd = {
       },
       hasMap: SITE.maps.url,
       areaServed: [
-        { '@type': 'Place', name: 'Villas de la Hacienda' },
+        ...DELIVERY_ZONES.map((z) => ({ '@type': 'Place', name: z.name })),
         { '@type': 'City', name: 'Atizapán de Zaragoza' },
         { '@type': 'City', name: 'Cuautitlán Izcalli' },
         { '@type': 'City', name: 'Tlalnepantla' },

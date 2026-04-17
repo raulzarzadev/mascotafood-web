@@ -39,6 +39,16 @@ export const SITE = {
   },
 } as const;
 
+export const DELIVERY_ZONES = [
+  { name: 'Villas de la Hacienda', postalCode: '52929', highlight: true },
+  { name: 'Adolfo López Mateos' },
+  { name: 'Hacienda del Pedregal' },
+  { name: 'Bosques del Valle' },
+  { name: 'Lomas de Atizapán' },
+  { name: 'Lomas de la Hacienda' },
+  { name: 'Arboledas' },
+] as const;
+
 export const REVIEWS = [
   {
     author: 'Jesús Hernández Bravo',
@@ -94,7 +104,7 @@ export const REVIEWS_AGGREGATE = {
 export const NAV_LINKS = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Productos', href: '#productos' },
-  { label: 'Nosotros', href: '#nosotros' },
+  { label: 'Entregas', href: '#zonas' },
   { label: 'Opiniones', href: '#opiniones' },
   { label: 'Ubicación', href: '#ubicacion' },
   { label: 'Contacto', href: '#contacto' },
